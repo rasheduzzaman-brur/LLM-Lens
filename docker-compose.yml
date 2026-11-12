@@ -1,0 +1,17 @@
+# CPU setup. For CUDA, base the backend image on a CUDA-enabled PyTorch image and add a GPU device reservation.
+services:
+  backend:
+    build: { context: ., dockerfile: backend/Dockerfile }
+    ports: ["8000:8000"]
+    volumes:
+      - ./models:/models          # model directories; downloads confirmed in the UI are saved here
+    environment:
+      LLMLENS_MODELS_DIR: /models
+      LLMLENS_CORS_ORIGINS: '["http://localhost:3000","http://127.0.0.1:3000"]'
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+      args: { NEXT_PUBLIC_API_URL: "http://localhost:8000" }
+    ports: ["3000:3000"]
+    depends_on: [backend]

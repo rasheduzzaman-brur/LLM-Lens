@@ -218,3 +218,14 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# --- LLM Lens ---
+# downloaded model weights
+/models/
+backend/.venv/
+# frontend
+node_modules/
+.next/
+*.log
+# the Python template above ignores lib/; the frontend keeps source there
+!frontend/lib/

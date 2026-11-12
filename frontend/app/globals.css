@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --page: #f9f9f7; --surface: #fcfcfb; --surface-2: #f4f4f1; --surface-3: #ecebe6; --line: #e1e0d9; --line-strong: #c3c2b7;
+  --ink: #0b0b0b; --ink-2: #52514e; --muted: #898781; --accent: #2a78d6; --accent-ink: #ffffff; --accent-soft: #e4effc;
+  --good: #006300; --warn: #8a5a00; --bad: #b42323; --derived: #6250d6;
+}
+.dark {
+  --page: #0d0d0d; --surface: #1a1a19; --surface-2: #222221; --surface-3: #2c2c2a; --line: #2c2c2a; --line-strong: #383835;
+  --ink: #f0efec; --ink-2: #c3c2b7; --muted: #898781; --accent: #3987e5; --accent-ink: #ffffff; --accent-soft: #12284a;
+  --good: #0ca30c; --warn: #fab219; --bad: #e66767; --derived: #9085e9;
+}
+
+@theme inline {
+  --color-page: var(--page); --color-surface: var(--surface); --color-surface-2: var(--surface-2); --color-surface-3: var(--surface-3);
+  --color-line: var(--line); --color-line-strong: var(--line-strong); --color-ink: var(--ink); --color-ink-2: var(--ink-2);
+  --color-muted: var(--muted); --color-accent: var(--accent); --color-accent-ink: var(--accent-ink); --color-accent-soft: var(--accent-soft);
+  --color-good: var(--good); --color-warn: var(--warn); --color-bad: var(--bad); --color-derived: var(--derived);
+  --font-sans: var(--font-geist-sans); --font-mono: var(--font-geist-mono);
+}
+
+html, body { height: 100%; }
+body { background: var(--page); color: var(--ink); font-family: var(--font-geist-sans), system-ui, sans-serif; font-size: 13px; }
+* { scrollbar-width: thin; scrollbar-color: var(--line-strong) transparent; }
+.num { font-family: var(--font-geist-mono), ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+.react-flow__attribution { display: none; }
+.react-flow__controls-button { background: var(--surface-2) !important; border-color: var(--line) !important; fill: var(--ink-2) !important; }
+.react-flow__handle { opacity: 0; }
