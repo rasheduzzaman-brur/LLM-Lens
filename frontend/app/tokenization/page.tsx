@@ -115,7 +115,7 @@ export default function TokenizationPage() {
                 <TabsContent value="nn" className="mt-3">
                   <div className="grid gap-x-6 sm:grid-cols-2">
                     {emb.data.neighbors?.map((n) => (
-                      <div key={n.token_id} className="grid grid-cols-[1fr_auto_80px] items-center gap-2 border-b border-line/60 py-0.5 text-xs">
+                      <div key={n.token_id} className="grid grid-cols-[minmax(0,1fr)_auto_80px] items-center gap-2 border-b border-line/60 py-0.5 text-xs">
                         <span className="num text-ink">“{showToken(n.token)}” <span className="text-muted">#{n.token_id}</span></span><span className="num">{n.cosine.toFixed(3)}</span>
                         <span className="h-1.5 rounded-sm bg-surface-3"><span className="block h-full rounded-sm bg-accent" style={{ width: `${Math.max(0, n.cosine) * 100}%` }} /></span>
                       </div>

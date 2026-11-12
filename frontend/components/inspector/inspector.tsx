@@ -74,7 +74,7 @@ function EventMeta({ ev }: { ev: TraceEvent }) {
     <div className="space-y-2">
       <div className="flex flex-wrap gap-1"><ProvenanceBadge p={ev.provenance} /><VerifiedBadge check={ev} /></div>
       {ev.formula && <Formula>{ev.formula}</Formula>}
-      <dl className="grid grid-cols-[84px_1fr] gap-x-2 gap-y-1 text-xs">
+      <dl className="grid grid-cols-[84px_minmax(0,1fr)] gap-x-2 gap-y-1 text-xs">
         {rows.map(([k, v]) => <div key={k} className="contents"><dt className="text-muted">{k}</dt><dd className="min-w-0 text-ink">{v}</dd></div>)}
       </dl>
       {ev.inputs.length > 0 && (

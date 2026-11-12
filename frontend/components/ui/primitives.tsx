@@ -29,7 +29,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({ classN
 Button.displayName = "Button";
 
 export function Card({ className, ...p }: React.HTMLAttributes<HTMLDivElement>) {
-  return <div className={cn("rounded-lg border border-line bg-surface", className)} {...p} />;
+  return <div className={cn("min-w-0 rounded-lg border border-line bg-surface", className)} {...p} />;
 }
 export function CardHeader({ title, sub, right, className }: { title: React.ReactNode; sub?: React.ReactNode; right?: React.ReactNode; className?: string }) {
   return (

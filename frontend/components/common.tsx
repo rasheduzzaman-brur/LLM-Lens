@@ -126,7 +126,7 @@ export function PageHeader({ title, sub, right }: { title: string; sub?: React.R
 export function VectorRow({ label, values, onInspect, note }: { label: React.ReactNode; values?: number[]; onInspect?: () => void; note?: React.ReactNode }) {
   if (!values) return null;
   return (
-    <div className="grid grid-cols-[minmax(110px,150px)_1fr] items-center gap-2 border-b border-line py-1 last:border-0">
+    <div className="grid grid-cols-[minmax(110px,150px)_minmax(0,1fr)] items-center gap-2 border-b border-line py-1 last:border-0">
       <div className="min-w-0 text-xs text-ink-2">{onInspect ? <button onClick={onInspect} className="num text-left text-accent hover:underline cursor-pointer">{label}</button> : label}{note && <div className="text-[11px] text-muted">{note}</div>}</div>
       <div className="num truncate text-[11px] text-ink">[{values.slice(0, 8).map((v) => fmt(v, 4)).join(", ")}{values.length > 8 ? `, … ${values.length} values` : ""}]</div>
     </div>

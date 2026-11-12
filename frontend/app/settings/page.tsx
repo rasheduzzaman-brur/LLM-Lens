@@ -44,7 +44,7 @@ export default function SettingsPage() {
           {q.isLoading && <Loading />}
           <ErrorNotice error={q.error ?? save.error} />
           {q.data && FIELDS.map((f) => (
-            <div key={f.key} className="grid items-center gap-x-3 gap-y-0.5 sm:grid-cols-[1fr_150px]">
+            <div key={f.key} className="grid items-center gap-x-3 gap-y-0.5 sm:grid-cols-[minmax(0,1fr)_150px]">
               <div><div className="text-xs font-medium">{f.label}</div><div className="text-[11px] text-muted">{f.help}</div></div>
               <div className="flex items-center gap-1.5"><Input type="number" className="num" value={draft[f.key] ?? ""} onChange={(e) => setDraft({ ...draft, [f.key]: Number(e.target.value) })} aria-label={f.label} />{f.unit && <span className="text-xs text-muted">{f.unit}</span>}</div>
             </div>

@@ -110,7 +110,7 @@ export default function GenerationPage() {
         </CardBody>
       </Card>
 
-      <div className="grid gap-3 xl:grid-cols-[minmax(300px,400px)_1fr]">
+      <div className="grid gap-3 xl:grid-cols-[minmax(300px,400px)_minmax(0,1fr)]">
         <div className="space-y-3">
           <Card>
             <CardHeader title={`Step ${step.index}: ${step.phase}`} right={<Badge tone={step.phase === "prefill" ? "accent" : "derived"}>{step.phase}</Badge>} />

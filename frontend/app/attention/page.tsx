@@ -37,7 +37,7 @@ export default function AttentionPage() {
       <PageHeader title="Attention Explorer" sub="Self-attention of the selected layer and head, from the Q/K/V projections to the output written back into the residual stream. Every matrix is a tensor of this run."
         right={<><LayerSelect n={model.n_layers} value={layer} onChange={(v) => set({ layer: v })} /><HeadSelect n={model.n_heads} value={head} onChange={(v) => set({ head: v })} /></>} />
       <ErrorNotice error={att.error} />
-      <div className="grid gap-3 xl:grid-cols-[1fr_minmax(260px,340px)]">
+      <div className="grid gap-3 xl:grid-cols-[minmax(0,1fr)_minmax(260px,340px)]">
         <Card>
           <CardHeader title={`Attention weights · layer ${layer} · head ${head}`} sub="Row = the token that is attending (query). Column = the token being attended to (key). Click a cell to select that query token."
             right={a && <VerifiedBadge check={a} />} />

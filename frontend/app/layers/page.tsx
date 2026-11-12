@@ -35,7 +35,7 @@ export default function LayersPage() {
     <div className="space-y-3">
       <PageHeader title="Transformer Layers" sub={`The ${model.n_layers} layers of ${model.name}, drawn from the loaded model. Click a layer to expand its operations; click an operation to open its real tensor in the inspector.`}
         right={<LayerSelect n={model.n_layers} value={layer} onChange={(v) => set({ layer: v })} />} />
-      <div className="grid gap-3 2xl:grid-cols-[minmax(380px,460px)_1fr]">
+      <div className="grid gap-3 2xl:grid-cols-[minmax(380px,460px)_minmax(0,1fr)]">
         <Card>
           <CardHeader title="Architecture" sub={run ? `Shapes are the actual tensor shapes of step ${stepIdx} (${run.steps[stepIdx].phase}).` : "Symbolic shapes (T = sequence length). Run a prompt to see actual shapes."}
             right={run && (

@@ -12,6 +12,59 @@ UI shows the result of that check next to every such tensor.
 Supported architectures: **GPT-2**, **Qwen2 / Qwen2.5**, **Llama-compatible** decoders (Llama, SmolLM2,
 TinyLlama, …). Other architectures are rejected with a clear message until an adapter is added.
 
+## Screenshots
+
+All screenshots show GPT-2 running the prompt "The Eiffel Tower is located in the city of".
+
+**Transformer Layers.** The architecture diagram is drawn from the loaded model. Clicking an operation opens its tensor in the inspector with its formula, shape, provenance and verification result.
+
+![Architecture diagram with the softmax operation selected and its tensor in the inspector](docs/screenshots/layers.png)
+
+**Attention Explorer.** Attention weights for one layer and head, and what the selected token attends to.
+
+![Attention weight heatmap and per-token attention bars](docs/screenshots/attention.png)
+
+**Softmax, step by step.** Scores, exponentials, the normalization denominator and the resulting weights for one attention row.
+
+![Softmax breakdown of one attention row](docs/screenshots/softmax.png)
+
+**Generation.** Logits and next-token probabilities for each step, with sampling controls.
+
+![Step-by-step generation with the next-token distribution](docs/screenshots/generation.png)
+
+**KV Cache.** What each step computes with and without the cache, plus a measured comparison.
+
+![KV cache reuse grids and timing comparison](docs/screenshots/kv-cache.png)
+
+<details>
+<summary>More screenshots</summary>
+
+**Comparing attention heads**
+
+![All heads of one layer side by side](docs/screenshots/heads.png)
+
+**Normalization, with every intermediate value**
+
+![LayerNorm calculation for one token](docs/screenshots/normalization.png)
+
+**Feed-forward network and activation function**
+
+![Activation curve with the token's real neurons and the residual stream through depth](docs/screenshots/mlp.png)
+
+**Hidden states**
+
+![Hidden-state norms and PCA projection](docs/screenshots/hidden-states.png)
+
+**Tokenization**
+
+![Token boundaries, ids and vocabulary information](docs/screenshots/tokenization.png)
+
+**Computation traces**
+
+![Ordered trace events with provenance and checks](docs/screenshots/traces.png)
+
+</details>
+
 ## Quick start
 
 Requirements: Python 3.11+, Node 20+. A GPU is optional.

@@ -191,7 +191,7 @@ export function OutputTab({ run, model, layer, head, position, stepIdx }: Ctx) {
       <div className="flex flex-wrap items-center gap-1.5 text-[11px] text-muted">
         <VerifiedBadge check={check} /><span>{check?.verified_against}</span>
       </div>
-      <div className="grid gap-3 xl:grid-cols-[minmax(220px,300px)_1fr]">
+      <div className="grid gap-3 xl:grid-cols-[minmax(220px,300px)_minmax(0,1fr)]">
         <div className="rounded-md border border-line p-2">
           <div className="mb-1 text-xs font-medium">Attention weights of “{showToken(run.tokens[position].token)}”</div>
           {r ? (

@@ -135,7 +135,7 @@ export default function KvCachePage() {
             </Card>
           </div>
 
-          <div className="grid gap-3 xl:grid-cols-[minmax(300px,420px)_1fr]">
+          <div className="grid gap-3 xl:grid-cols-[minmax(300px,420px)_minmax(0,1fr)]">
             <Card>
               <CardHeader title="Layer-wise cache" sub="Click a layer to view its tensors." />
               <CardBody className="max-h-[420px] overflow-auto p-0">
